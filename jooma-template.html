@@ -1,0 +1,129 @@
+<?php  
+/*------------------------------------------------------------------------
+# author    Saleamp!
+# copyright Copyright © 2015 example.com. All rights reserved.
+# @license  http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Website   http://www.example.com
+-------------------------------------------------------------------------*/
+
+defined( '_JEXEC' ) or die; 
+
+// variables
+$app = JFactory::getApplication();
+$doc = JFactory::getDocument(); 
+$params = $app->getParams();
+$pageclass = $params->get('pageclass_sfx'); // parameter (menu entry)
+$tpath = $this->baseurl.'/templates/'.$this->template;
+
+$this->setGenerator(null);
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
+  <head>
+    <jdoc:include type="head" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Remarketing LP</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/style.css" rel="stylesheet">
+    
+  <jdoc:include type="modules" name="css-override" />
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  </head>
+
+<body>
+
+<div id="page" class="hfeed site">
+
+  <div id="content" class="site-content container">
+
+    <div class="row">
+
+      <div class="col-sm-4 col-md-4 col-sm-push-8 right-column">
+        
+        <div id="secondary" class="widget-area" role="complementary">
+          <aside>
+            <header class="entry-header page-header col-sm-12 col-md-12 visible-xs">
+              <jdoc:include type="modules" name="logo-mobile" style="xhtml" />
+            </header><!-- .entry-header -->
+
+            <div class="form-horizontal">
+                <div class="form-header">
+                  <jdoc:include type="modules" name="form-header" style="xhtml" />
+                </div>
+                <jdoc:include type="modules" name="form" style="xhtml" />
+            </div>
+
+            <div class="disclaimer">
+              <jdoc:include type="modules" name="disclaimer" style="xhtml" />
+            </div>
+
+          </aside>
+        </div>
+      </div>
+
+       <div class="col-sm-8 col-md-8 col-sm-pull-4 left-column">
+        
+        <div id="primary" class="content-area">
+          <main id="main" class="site-main" role="main">
+
+            <article>
+
+              <header class="entry-header page-header col-sm-12 col-md-12">
+                <jdoc:include type="modules" name="header" style="xhtml" />
+              </header><!-- .entry-header -->
+
+              <div class="entry-content">
+                <jdoc:include type="modules" name="content" style="xhtml" />
+              </div><!-- .entry-content -->
+
+            </article>
+
+          </main>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- #content .site-content -->
+
+  <footer id="colophon" class="site-footer container" role="contentinfo">
+    <div class="row">
+      <div class="footer-testimonials col-sm-12 col-md-12">
+        <jdoc:include type="modules" name="testimonials" style="xhtml" />
+      </div>
+
+      <div class="col-sm-12 col-md-12 aligncenter footer-bot">
+          <jdoc:include type="modules" name="footer" style="xhtml" />
+      </div>
+
+    </div>
+  </footer><!-- #colophon -->
+
+</div><!-- #page -->
+
+
+  <!-- please don't include this jQuery in wordpress. This is intendent only in static -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

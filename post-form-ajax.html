@@ -1,0 +1,365 @@
+
+<?php
+
+$program = $_SESSION['form']['program'][0];
+$title = $_SESSION['form']['title'][0];
+$firstname = $_SESSION['form']['first_name'];
+$lastname = $_SESSION['form']['last_name'];
+$email = $_SESSION['form']['email'];
+$phone = $_SESSION['form']['phone'];
+$company = $_SESSION['form']['company'];
+$education = $_SESSION['form']['highest_edu_level'][0];
+$experience = $_SESSION['form']['work_experience'][0];
+$country = $_SESSION['form']['country'][0];
+$commcode = $_SESSION['form']['comm_code'];
+
+
+switch ($country){
+    case 'ALB': $country = 'ALBANIA';break;
+    case 'DZA': $country = 'ALGENA';break;
+    case 'ASM': $country = 'AMERICAN SAMOA';break;
+    case 'AND': $country = 'ANDORRA';break;
+    case 'AGO': $country = 'ANGOLA';break;
+    case 'AIA': $country = 'ANGUILLA';break;
+    case 'ALA': $country = 'ÅLAND, ISLANDS';break;
+    case 'ARG': $country = 'ARGENTINA';break;
+    case 'ARM': $country = 'ARMENIA';break;
+    case 'ABW': $country = 'ARUBA';break;
+    case 'AUS': $country = 'AUSTRALIA';break;
+    case 'AUT': $country = 'AUSTRIA';break;
+    case 'AZE': $country = 'AZERBAIJAN';break;
+    case 'BHS': $country = 'BAHAMAS';break;
+    case 'BHR': $country = 'BAHRAIN';break;
+    case 'BGD': $country = 'BANGLADESH';break;
+    case 'BRB': $country = 'BARBADOS';break;
+    case 'BLR': $country = 'BELARUS';break;
+    case 'BEL': $country = 'BELGIUM';break;
+    case 'BLZ': $country = 'BELIZE';break;
+    case 'BEN': $country = 'BENIN';break;
+    case 'BMU': $country = 'BERMUDA';break;
+    case 'BTN': $country = 'BHUTAN';break;
+    case 'BOL': $country = 'BOLIVIA';break;
+    case 'BIH': $country = 'BOSNIA AND HERZEGOVINA';break;
+    case 'BWA': $country = 'BOTSWANA';break;
+    case 'BVT': $country = 'BOUVET ISLAND';break;
+    case 'BRA': $country = 'BRAZIL';break;
+    case 'IOT': $country = 'BRITISH INDIAN OCEAN TERRITORY';break;
+    case 'BRN': $country = 'BRUNEI';break;
+    case 'BGR': $country = 'BULGARIA';break;
+    case 'BFA': $country = 'BURKINA FASO';break;
+    case 'BDI': $country = 'BURUNDI';break;
+    case 'KHM': $country = 'KAMPUCHEA';break;
+    case 'CMR': $country = 'CAMEROON';break;
+    case 'CAN': $country = 'CANADA';break;
+    case 'CPV': $country = 'CAPE VERDE';break;
+    case 'CYM': $country = 'CAYMAN ISLANDS';break;
+    case 'CAF': $country = 'CENTRAL AFRICAN REPUBLIC';break;
+    case 'TCD': $country = 'CHAD';break;
+    case 'CHL': $country = 'CHILE';break;
+    case 'CHN': $country = 'CHINA';break;
+    case 'CXR': $country = 'CHRISTMAS ISLAND';break;
+    case 'CCK': $country = 'COCOS ISLANDS';break;
+    case 'COL': $country = 'COLOMBIA';break;
+    case 'COM': $country = 'COMOROS';break;
+    case 'COD': $country = 'DEMOCRATIC REPUBLIC OF CONGO';break;
+    case 'COK': $country = 'COOK ISLANDS';break;
+    case 'CRI': $country = 'COSTA RICA';break;
+    case 'CIV': $country = 'IVORY COAST';break;
+    case 'HRV': $country = 'CROATIA';break;
+    case 'CYP': $country = 'CYPRUS';break;
+    case 'CZE': $country = 'CZECK REPUBLIC';break;
+    case 'DNK': $country = 'DENMARK';break;
+    case 'DJI': $country = 'DJIBOUTI';break;
+    case 'DMA': $country = 'DOMINICA';break;
+    case 'DOM': $country = 'DOMINICAN REPUBLIC';break;
+    case 'ECU': $country = 'ECUADOR';break;
+    case 'EGY': $country = 'EGYPT';break;
+    case 'SLV': $country = 'EL SALVADOR';break;
+    case 'GNQ': $country = 'EQUATORIAL GUINEA';break;
+    case 'ERI': $country = 'ERİTREA';break;
+    case 'EST': $country = 'ESTONIA';break;
+    case 'ETH': $country = 'ETHIOPIA';break;
+    case 'FLK': $country = 'FALKLAND ISLAND';break;
+    case 'FRO': $country = 'FAEROE ISLANDS';break;
+    case 'FJI': $country = 'FIJI';break;
+    case 'FIN': $country = 'FINLAND';break;
+    case 'FRA': $country = 'FRANCE';break;
+    case 'GUF': $country = 'FRENCH GUIANA';break;
+    case 'PYF': $country = 'FRENCH POLYNESIA';break;
+    case 'ATF': $country = 'FRENCH SOUTHERN TERRITORIES';break;
+    case 'GAB': $country = 'GABON';break;
+    case 'GMB': $country = 'GAMBIA';break;
+    case 'GEO': $country = 'GEORGIA';break;
+    case 'DEU': $country = 'GERMANY';break;
+    case 'GHA': $country = 'GHANA';break;
+    case 'GIB': $country = 'GIBRALTAR';break;
+    case 'GRC': $country = 'GREECE';break;
+    case 'GRL': $country = 'GREENLAND';break;
+    case 'GRD': $country = 'GRENADA';break;
+    case 'GLP': $country = 'GUADELOUPE';break;
+    case 'GUM': $country = 'GUAM';break;
+    case 'GTM': $country = 'GUATEMALA';break;
+    case 'GIN': $country = 'GUINEA';break;
+    case 'GNB': $country = 'GUINEA-BISSAU';break;
+    case 'GUY': $country = 'GUYANA';break;
+    case 'HTI': $country = 'HAITI';break;
+    case 'HMD': $country = 'HEARD AND MCDONALD ISLANDS';break;
+    case 'HND': $country = 'HONDURAS';break;
+    case 'HKG': $country = 'HONG KONG';break;
+    case 'HUN': $country = 'HUNGARY';break;
+    case 'ISL': $country = 'ICELAND';break;
+    case 'IND': $country = 'INDIA';break;
+    case 'IDN': $country = 'INDONESIA';break;
+    case 'IRQ': $country = 'IRAQ';break;
+    case 'IRL': $country = 'IRELAND';break;
+    case 'ISR': $country = 'ISRAEL';break;
+    case 'ITA': $country = 'ITALY';break;
+    case 'JAM': $country = 'JAMAICA';break;
+    case 'JPN': $country = 'JAPAN';break;
+    case 'JOR': $country = 'JORDAN';break;
+    case 'KAZ': $country = 'KAZAKSTAN';break;
+    case 'KEN': $country = 'KENYA';break;
+    case 'KIR': $country = 'KIRIBATI';break;
+    case 'KOR': $country = 'REP OF KOREA';break;
+    case 'KWT': $country = 'KUWAIT';break;
+    case 'KGZ': $country = 'KYRGYZTAN';break;
+    case 'LAO': $country = 'LAO PEOPLE\'S DEM REP';break;
+    case 'LVA': $country = 'LATVIA';break;
+    case 'LBN': $country = 'LEBANON';break;
+    case 'LSO': $country = 'LESOTHO';break;
+    case 'LBR': $country = 'LIBERIA';break;
+    case 'LYB': $country = 'LYBIA';break;
+    case 'LIE': $country = 'LIECHTENSTEIN';break;
+    case 'LTU': $country = 'LITHUANIA';break;
+    case 'LUX': $country = 'LUXEMBOURG';break;
+    case 'MAC': $country = 'MACAU';break;
+    case 'MKD': $country = 'MACEDONIA';break;
+    case 'MDG': $country = 'MADAGASCAR';break;
+    case 'MWI': $country = 'MALAWI';break;
+    case 'MYS': $country = 'MALAYSIA';break;
+    case 'MDV': $country = 'MALDIVES';break;
+    case 'MLI': $country = 'MALI';break;
+    case 'MLT': $country = 'MALTA';break;
+    case 'MHL': $country = 'MARSHALL ISLANDS';break;
+    case 'MTQ': $country = 'MARTINIQUE';break;
+    case 'MRT': $country = 'MAURETANIA';break;
+    case 'MUS': $country = 'MAURITIUS';break;
+    case 'MYT': $country = 'MAYOTTE';break;
+    case 'MEX': $country = 'MEXICO';break;
+    case 'FSM': $country = 'MICRONESIA';break;
+    case 'MDA': $country = 'MOLDOVA';break;
+    case 'MCO': $country = 'MONACO';break;
+    case 'MNG': $country = 'MONGOLIA';break;
+    case 'MSR': $country = 'MONTSERRAT';break;
+    case 'MAR': $country = 'MOROCCO';break;
+    case 'MOZ': $country = 'MOZAMBIQUE';break;
+    case 'NAM': $country = 'NAMIBIA';break;
+    case 'NRU': $country = 'NAURU';break;
+    case 'NPL': $country = 'NEPAL';break;
+    case 'NDL': $country = 'NETHERLANDS THE';break;
+    case 'ANT': $country = 'NETHERLANDS ANTILLES';break;
+    case 'NCL': $country = 'NEW CALEDONIA';break;
+    case 'NZL': $country = 'NEW ZEALAND';break;
+    case 'NIC': $country = 'NICARAGUA';break;
+    case 'NER': $country = 'NIGER';break;
+    case 'NGA': $country = 'NIGERIA';break;
+    case 'NIU': $country = 'NIUE';break;
+    case 'NFK': $country = 'NORFOLK ISLAND';break;
+    case 'MNP': $country = 'MARIANNES ISLANDS';break;
+    case 'NOR': $country = 'NORWAY';break;
+    case 'OMN': $country = 'OMAN';break;
+    case 'PAK': $country = 'PAKISTAN';break;
+    case 'PLW': $country = 'PALAU';break;
+    case 'PSE': $country = 'PALESTINE';break;
+    case 'PAN': $country = 'PANAMA';break;
+    case 'PNG': $country = 'PAPUA NEW GUINEA';break;
+    case 'PRY': $country = 'PARAGUAY';break;
+    case 'PER': $country = 'PERU';break;
+    case 'PHL': $country = 'PHILIPPINES';break;
+    case 'PCN': $country = 'PITCAIRN';break;
+    case 'POL': $country = 'POLAND';break;
+    case 'PRT': $country = 'PORTUGAL';break;
+    case 'PRI': $country = 'PUERTO RICO';break;
+    case 'QAT': $country = 'QUATAR';break;
+    case 'REU': $country = 'REUNION';break;
+    case 'ROU': $country = 'ROMANIA';
+    case 'RUS': $country = 'RUSSIA';break;
+    case 'RWA': $country = 'RWANDA';break;
+    case 'SHN': $country = 'ST HELENA';break;
+    case 'KNA': $country = 'SAINT KITTS AND NEVIS';break;
+    case 'LCA': $country = 'ST LUCIA';break;
+    case 'SPM': $country = 'ST PIERRE AND MIQUELON';break;
+    case 'VCT': $country = 'ST VINCENT';break;
+    case 'WSM': $country = 'SAMOA';break;
+    case 'SMR': $country = 'SAN MARINO';break;
+    case 'STP': $country = 'SAO TOME AND PRINCIPE';break;
+    case 'SAU': $country = 'SAUDI ARABIA';break;
+    case 'SEN': $country = 'SENEGAL';break;
+    case 'SRB': $country = 'SERBIA';break;
+    case 'SYC': $country = 'SEYCHELLES';break;
+    case 'SLE': $country = 'SIERRA LEONE';break;
+    case 'SGP': $country = 'SINGAPORE';break;
+    case 'SVK': $country = 'SLOVAKIA';break;
+    case 'SVN': $country = 'SLOVENIA';break;
+    case 'SLB': $country = 'SOLOMON ISLANDS';break;
+    case 'SOM': $country = 'SOMALIA';break;
+    case 'ZAF': $country = 'SOUTH AFRICA';break;
+    case 'SGS': $country = 'SANDWICH ISLANDS';break;
+    case 'SSD': $country = 'SOUTH SUDAN';break;
+    case 'ESP': $country = 'SPAIN';break;
+    case 'LKA': $country = 'SRI LANKA';break;
+    case 'SUR': $country = 'SURINAME';break;
+    case 'SJM': $country = 'SVALBARD AND JAN MAYEN ISLANDS';break;
+    case 'SWZ': $country = 'SWAZILAND';break;
+    case 'SWE': $country = 'SWEDEN';break;
+    case 'CHE': $country = 'SWITZERLAND';break;
+    case 'TWN': $country = 'TAIWAN';break;
+    case 'TJK': $country = 'TAJIKSTAN';break;
+    case 'TZA': $country = 'TANZANIA';break;
+    case 'THA': $country = 'THAILAND';break;
+    case 'TLS': $country = 'EAST TIMOR';break;
+    case 'TGO': $country = 'TOGO';break;
+    case 'TKL': $country = 'TOKELAU';break;
+    case 'TON': $country = 'TONGA';break;
+    case 'TTO': $country = 'TRINIDAD AND TOBAGO';break;
+    case 'TUN': $country = 'TUNISIA';break;
+    case 'TUR': $country = 'TURKEY';break;
+    case 'TKM': $country = 'TURKMENISTAN';break;
+    case 'TCA': $country = 'TURKS AND CAICOS ISLANDS';break;
+    case 'TUV': $country = 'TUVALU';break;
+    case 'UGA': $country = 'UGANDA';break;
+    case 'UKR': $country = 'UKRAINA';break;
+    case 'ARE': $country = 'UNITED ARAB EMIRATES';break;
+    case 'GBR': $country = 'UNITED KINGDOM';break;
+    case 'USA': $country = 'UNITED STATES';break;
+    case 'URY': $country = 'URUGUAY';break;
+    case 'UZB': $country = 'UZBEKISTAN';break;
+    case 'VUT': $country = 'VANUATU';break;
+    case 'VEN': $country = 'VENEZUELA';break;
+    case 'VNM': $country = 'VIET NAM';break;
+    case 'VGB': $country = 'BRITISH VIRGIN ISLAND';break;
+    case 'VIR': $country = 'US VIRGIN ISLANDS';break;
+    case 'WLF': $country = 'WALLIS AND FUTUNA ISLANDS';break;
+    case 'ESH': $country = 'WESTERN SAHARA';break;
+    case 'YEM': $country = 'YEMEN';break;
+    case 'ZMB': $country = 'ZAMBIA';break;
+    case 'ZWE': $country = 'ZIMBABWE';break;
+}
+switch ($education){
+    case "Pre-Bac" : $education = "Bac<";break;
+    case "Bac+3 License" : $education = "Bac+3";break;
+    case "Bac+5 Master" : $education = "Bac+5";break;
+    case "Ph.D." : $education = "Bac+6";break;
+}
+
+
+if ($program == "0003") {
+    $link = "/images/ifg-87/2015-IFG-N0003- MBA Finance IHFi - Online.pdf";
+    /* finance */
+} elseif 
+   ($program == "0016") {
+    $link = "/images/ifg-87/2015-IFG-N0016%20-%20Global%20Executive%20MBA.pdf";
+    /* global mba */
+} elseif 
+    ($program == "0029") {
+    $link = "/images/ifg-87/2015-IFG-N0003- MBA Finance IHFi - Blended.pdf";
+    /* mba finance ihfi blended */
+}
+elseif 
+    ($program == "0001") {
+    $link = "/images/ifg-87/2015-IFG-N0001- Executive MBA ICG.pdf";
+    /* executive mba icg */
+}
+elseif 
+    ($program == "0009") {
+    $link = "/images/ifg-87/2015-IFG-N0009 - MBA Management des Ressources Humaines.pdf";
+    /* management des resources humaines */
+}
+elseif 
+    ($program == "0004") {
+    $link = "/images/ifg-87/2015-IFG-N0004- MBA Marketing INM.pdf";
+    /* mba marketing inm */
+}
+elseif 
+    ($program == "0020") {
+    $link = "/images/ifg-87/2015-IFG-N0020 - MBA Dirigeant de PME.pdf";
+    /* mba dirigeant de pme */
+}
+
+elseif 
+    ($program == "0007") {
+    $link = "/images/ifg-87/2015-IFG-N0007 - Diplome Business Unit.pdf";
+    /* diplome d'universite diriger une business unit */
+}
+
+elseif 
+    ($program == "0008") {
+    $link = "/images/ifg-87/2015-IFG-N0008 - Dipome Universite RH.pdf   ";
+    /* Diplôme d'Université Responsable Ressources Humaines */
+}
+else {
+    $link = "null";
+}
+?>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+        // Defining form variables
+
+        var crm_intrtprogramme=<?php echo json_encode($program); ?>;
+        var table_salutation = {'Mr' : "M.", 'Mme' : "Mme", 'Mlle' : "Mlle"};
+        var table_experience = {0 : "0", 1 : '1 an', 2 : '2 ans', 3 : '3 ans', 4 : '4 ans', '5+' : '> 5 ans'};
+ 
+        
+        var Salutation=<?php echo json_encode($title); ?>;
+        var FirstName =<?php echo json_encode($firstname); ?>;
+        var LastName =<?php echo json_encode($lastname); ?>;
+        var Email =<?php echo json_encode($email); ?>;
+        var Phone =<?php echo json_encode($phone); ?>;
+        var Company =<?php echo json_encode($company); ?>;
+        var Country =<?php echo json_encode($country); ?>;
+        var crm_niveauformation =<?php echo json_encode($education); ?>;
+        var initialcommunication =<?php echo json_encode($experience); ?>;
+        var crm_urlsource =<?php echo json_encode($commcode); ?>;
+                if(crm_urlsource === ""){
+                     crm_urlsource = "SOC";
+                }
+              // add-on for UED CRM
+        var LeadSource= "Facebook_Ad";          // Lead source = Facebook_Ad
+        var crm_mkt_lastsource= "SOC_SALEAMP"; // Name of the form
+        var crm_institution = "IFG";  // Name of the institution
+                   
+            //console.log("submit form");
+            // Envoi de la requête HTTP en mode asynchrone
+            $.ajax({
+                url: 'https://app-lon02.marketo.com/index.php/leadCapture/save', // Le nom du fichier indiqué dans le formulaire
+                type: 'POST', // La méthode indiquée dans le formulaire (get ou post)
+                data: {
+                    "munchkinId" : '192-MZV-331',
+                    "formid" : '1026',
+                    "crm_intrtprogramme" : crm_intrtprogramme,  
+                    "FirstName" : FirstName, 
+                    "LastName" : LastName, 
+                    "new_zt_civilite" : Salutation,
+                    "Email" : Email, 
+                    "Phone" : Phone, 
+                    "Company" : Company, 
+                    "address2_country" : Country, 
+                    "crm_niveauformation" : crm_niveauformation, 
+                    "initialcommunication" : initialcommunication,
+                    "crm_urlsource" : crm_urlsource,
+                    "LeadSource" : LeadSource,
+                    "crm_mkt_lastsource" : crm_mkt_lastsource,
+                    "crm_institution" : crm_institution,
+                }, 
+                //$('#userForm').unbind("submit").submit();
+                // Je sérialise les données (j'envoie toutes les valeurs présentes dans le formulaire)
+                success: function() {
+
+                  }
+            });
+        });
+
+    </script>
